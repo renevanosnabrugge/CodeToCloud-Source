@@ -140,14 +140,22 @@ function Apply-Settings
     $current = Get-Content (join-path $PSScriptRoot "settings.json") | ConvertFrom-Json
 
     $global:studentsuffix = $current.Student
-    $global:resourcegroupName = "fabmedical-rg-" + $studentsuffix
-    $global:location = "westeurope"
-    $global:dnsEntryName = $current.Student
-
-    $env:dnsEntryName = $dnsEntryName
-    $env:location = $location
-    $env:resourcegroupName = $resourcegroupName
-    $env:studentsuffix = $studentsuffix
+    $global:resourcegroupName = "fabmedical-rg-" + $current.Student
+    $global:cosmosDBName = "fabmedical-cdb-" + $current.Student
+    $global:webappName = "fabmedical-web-" + $current.Student
+    $global:planName = "fabmedical-plan-" + $current.Student
+    $global:location1 = "westeurope"
+    $global:location2 = "northeurope"
+    $global:appInsights = "fabmedicalai-" + $current.Student
+    
+    $env:studentsuffix = $current.Student
+    $env:resourcegroupName = "fabmedical-rg-" + $current.Student
+    $env:cosmosDBName = "fabmedical-cdb-" + $current.Student
+    $env:webappName = "fabmedical-web-" + $current.Student
+    $env:planName = "fabmedical-plan-" + $current.Student
+    $env:location1 = "westeurope"
+    $env:location2 = "northeurope"
+    $env:appInsights = "fabmedicalai-" + $current.Student
   }
 }
 
