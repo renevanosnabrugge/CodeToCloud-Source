@@ -147,7 +147,7 @@ function Apply-Settings
     $global:location1 = "westeurope"
     $global:location2 = "northeurope"
     $global:appInsights = "fabmedicalai-" + $current.Student
-    $global:GC_PAT = $current.GithubToken
+    $global:CR_PAT = $current.GithubToken
     
     $env:studentsuffix = $current.Student
     $env:resourcegroupName = "fabmedical-rg-" + $current.Student
@@ -157,7 +157,7 @@ function Apply-Settings
     $env:location1 = "westeurope"
     $env:location2 = "northeurope"
     $env:appInsights = "fabmedicalai-" + $current.Student
-    $env:GC_PAT = $current.GithubToken
+    $env:CR_PAT = $current.GithubToken
   }
 }
 
