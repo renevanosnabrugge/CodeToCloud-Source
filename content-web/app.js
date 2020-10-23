@@ -8,6 +8,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
 const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
 
+const appInsights = require("applicationinsights");
+appInsights.setup("7c90ff95-da70-4686-a405-490f4f9a75f2");
+appInsights.start();
 
 function getSessions(cb) {
   request(contentApiUrl + '/sessions', function (err, response, body) {
