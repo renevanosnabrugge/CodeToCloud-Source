@@ -1,6 +1,6 @@
 param
 (
-    [string] $studentprefix = "tst"
+    [string] $studentprefix = "rvo"
 )
 
 $resourcegroupName = "fabmedical-rg-" + $studentprefix
@@ -25,8 +25,8 @@ az cosmosdb create --name $cosmosDBName `
 #Create a Azure App Service Plan
 az appservice plan create --name $planName --resource-group $resourcegroupName --sku S1 --is-linux
 
-az webapp config appsettings set --settings DOCKER_REGISTRY_SERVER_USERNAME="https://ghcr.io" --name $($webappName) --resource-group $($resourcegroupName) 
-az webapp config appsettings set --settings DOCKER_REGISTRY_SERVER_URL="notapplicable" --name $($webappName) --resource-group $($resourcegroupName) 
+az webapp config appsettings set --settings DOCKER_REGISTRY_SERVER_URL="https://ghcr.io" --name $($webappName) --resource-group $($resourcegroupName) 
+az webapp config appsettings set --settings DOCKER_REGISTRY_SERVER_USERNAME="notapplicable" --name $($webappName) --resource-group $($resourcegroupName) 
 az webapp config appsettings set --settings DOCKER_REGISTRY_SERVER_PASSWORD="$($env:CR_PAT)" --name $($webappName) --resource-group $($resourcegroupName) 
 
 
