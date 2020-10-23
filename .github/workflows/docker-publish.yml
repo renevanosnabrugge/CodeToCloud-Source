@@ -31,7 +31,7 @@ jobs:
       - name: Deploy Infrastructure
         shell: pwsh
         run: |
-          .\infrastructure\deploy-infrastructure.ps1 -studentprefix <your abbreviation>
+          .\infrastructure\deploy-infrastructure.ps1 -studentprefix rvo
           
  
           
