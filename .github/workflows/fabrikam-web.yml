@@ -3,8 +3,8 @@ name: Fabrikam Web Build
 on:
   push:
     # Publish `main` as Docker `latest` image.
-    branches:
-      - main
+    branches-ignore:
+      - '**'
     paths:
       - 'content-web/**'
       - '.github/workflows/fabrikam-web.yml'

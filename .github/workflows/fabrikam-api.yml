@@ -3,8 +3,8 @@ name: Fabrikam API Build
 on:
   push:
     # Publish `main` as Docker `latest` image.
-    branches:
-      - main
+    branches-ignore:
+      - '**'
     paths:
       - 'content-api/**'
       - '.github/workflows/fabrikam-api.yml'      
